@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,10 @@ Route::post('control', [UserController::class, 'getData']);
  
 Route::view ('login','login' ) ;
    
+
+// store data into car table
+Route::get('createpost',[postController::class,'create']);
+
+Route::post('storepost',[postController::class,'store'])->name('storepost');
+Route::get('posts',[postController::class,'index']);
+
