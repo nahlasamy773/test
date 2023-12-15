@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title',100); 
             $table->longText('description');
-            $table->longText('author');
+            $table->longText('author',100);
             $table->boolean('published');
             $table->timestamps();
             

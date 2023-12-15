@@ -40,8 +40,14 @@ Route::view ('login','login' ) ;
    
 
 // store data into car table
-Route::get('createpost',[postController::class,'create']);
+Route::get('createpost',[postController::class,'create'])->name('createpost');
 
 Route::post('storepost',[postController::class,'store'])->name('storepost');
-Route::get('posts',[postController::class,'index']);
+Route::get('posts',[postController::class,'index'])->name('posts');
+Route::get('updatePost/{id}',[postController::class,'edit']);
+Route::put('update/{id}',[postController::class,'update'])->name('update');
+Route::get('showPost/{id}',[postController::class,'show'])->name('show');
+
+
+
 

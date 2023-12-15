@@ -15,11 +15,7 @@
   <form action="{{route('storepost')}}" method="post">
     @csrf
 
-    <!-- <div class="form-group">
-      <label for="title">ID:</label>
-      <input type="text" class="form-control" id="title" placeholder="Enter ID" name="id">
-    </div> -->
-
+   
     <div class="form-group">
       <label for="title">Title:</label>
       <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
