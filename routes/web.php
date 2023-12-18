@@ -48,6 +48,14 @@ Route::get('updatePost/{id}',[postController::class,'edit']);
 Route::put('update/{id}',[postController::class,'update'])->name('update');
 Route::get('showPost/{id}',[postController::class,'show'])->name('show');
 
+Route::get('deletePost/{id}',[postController::class,'destroy']);
+Route::get('trashed',[postController::class,'trashed'])->name('trashed');
+Route::get('forceDelete/{id}',[postController::class,'forceDelete'])->name('forceDelete');
+
+Route::get('restorePost/{id}',[postController::class,'restore'])->name('restoreCar');
+
+
+
 
 
 

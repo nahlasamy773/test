@@ -21,9 +21,9 @@
         <th>Description</th>
         <th>Author</th>
         <th>Published</th>
-        <th>Edit</th>
-        <th>Show</th>
         <th>Delete</th>
+        <th>Restore</th>  
+
 
       </tr>
     </thead>
@@ -42,10 +42,11 @@
                 No
             @endif
         </td>
-        <td><a href="updatePost/{{ $post->id }}">Edit</a></td>
-        <td><a href="showPost/{{ $post->id }}">Show</a></td>
-        <td><a href="deletePost/{{ $post->id }}"onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+
+        <td><a href="deletePost/{{ $post->id }}"onclick="return confirm('Are you sure you want to delete?')">forceDelete</a></td>
        <!-- / this part to confirm before deletion //onclick="return confirm('Are you sure you want to delete?')">Delete</a></td> -->
+       <td><a href="restorePost/{{ $post->id }}">Restore</a></td>
+
 
 
       </tr>

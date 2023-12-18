@@ -83,6 +83,37 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Post::where('id',$id)->delete();
+        return redirect('posts');
     }
+
+    //trashed
+
+    public function trashed()
+    {
+        $posts=Post::onlyTrashed()->get();
+        return view ('trashed', compact('posts'));  
+    }
+
+//forceDelete
+      
+public function forceDelete(string $id)
+{
+    Post::where('id',$id)->forceDelete();
+    return redirect('posts');
+}
+
+
+//restore
+      
+public function restore(string $id)
+{
+    Post::where('id',$id)->restore();
+    return redirect('posts');
+}
+
+
+
+
+
 }
