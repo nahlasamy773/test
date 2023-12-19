@@ -38,11 +38,21 @@ class PostController extends Controller
     {
         
 
+        $data= $request->validate ([
 
-        $data= $request->only($this->columns);
-        $data['published']= isset($request->published);
-        Post::create ($data);
-         return redirect('posts');
+            'title'=>'required|string|max:50',
+            'description'=>'required|string',
+            'author'=>'required|string',
+
+
+            ]);
+
+
+            $data['published']= isset($request->published);
+            Post::create ($data);
+            return redirect('posts');
+
+       
 
     }
 
