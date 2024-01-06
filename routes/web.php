@@ -38,9 +38,10 @@ Route::post('control', [UserController::class, 'getData']);
  
 Route::view ('login','login' ) ;
    
+//->middleware('verified')->name
 
 // store data into car table
-Route::get('createpost',[postController::class,'create'])->name('createpost');
+Route::get('createpost',[postController::class,'create'])->middleware('verified')->name('createpost');
 
 Route::post('storepost',[postController::class,'store'])->name('storepost');
 Route::get('posts',[postController::class,'index'])->name('posts');
@@ -55,7 +56,12 @@ Route::get('forceDelete/{id}',[postController::class,'forceDelete'])->name('forc
 Route::get('restorePost/{id}',[postController::class,'restore'])->name('restoreCar');
 
 
+Auth::routes(['verify'=>true]);
 
 
 
 
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
